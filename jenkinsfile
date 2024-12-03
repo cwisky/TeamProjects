@@ -6,7 +6,7 @@ pipeline {
                 script {
                     println 'Clone Repository'
                 }
-                git branch: 'main', url: 'https://github.com/cwisky/TeamProjects.git
+                git branch: 'main', url: 'https://github.com/cwisky/TeamProjects.git'
             }
         }
         stage('Run Application') {

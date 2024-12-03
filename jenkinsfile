@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/cwisky/TeamProjects.git
+            }
+        }
+        stage('Run Application') {
+            steps {
+                sh 'nohup java -jar spring-web.jar &'
+            }
+        }
+    }
+}

@@ -3,11 +3,17 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
+                script {
+                    println 'Clone Repository'
+                }
                 git branch: 'main', url: 'https://github.com/cwisky/TeamProjects.git
             }
         }
         stage('Run Application') {
             steps {
+                script {
+                    println 'Run Application'
+                }
                 sh 'nohup java -jar spring-web.jar &'
             }
         }

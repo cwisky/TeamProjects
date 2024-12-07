@@ -16,8 +16,8 @@ pipeline {
                 // simple-app.jar 실행 및 로그 저장
                 sh '''
                 if [ -f simple-app.jar ]; then
-                    echo "simple-app.jar found, starting the application..."
-                    java -jar simple-app.jar > app.log 2>&1 &
+                    echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting application..." >> app.log
+                    java -jar simple-app.jar >> app.log 2>&1 &
                     echo "Application is running. Logs are being written to app.log"
                 else
                     echo "simple-app.jar not found!"
